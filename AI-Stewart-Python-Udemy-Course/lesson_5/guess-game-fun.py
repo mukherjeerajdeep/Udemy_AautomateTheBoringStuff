@@ -7,8 +7,8 @@ print('Welcome, ' + playerName + ', to the guess game ')
 
 secretNumber = random.randint(1,20)
 
-#print('The secret number is : ' + str(secretNumber))
-    
+# print('The secret number is : ' + str(secretNumber))
+
 attempt = 0 # Someone can regulate it from here
 maxTry = 5
 
@@ -21,15 +21,15 @@ while attempt < maxTry:
             print('Your guess is too high')             
         elif guess < secretNumber:
             print('Your guess is too low')            
-        else: # guess and secret matched
+        else:    # guess and secret matched
             break
-    except:
+    except ValueError:
         print('Please enter a valie between 1-20')        
     attempt += 1
     print('Attempt left : ' + str(maxTry - attempt))
     
 
-if guess != secretNumber:
+if secretNumber != guess:
     print('You maxed out your retry, the secretNumber was ' + str(secretNumber))
 else:
     print('You guessed correctly, the secretNumber was ' + str(secretNumber))

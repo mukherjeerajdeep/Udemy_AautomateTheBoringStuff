@@ -72,7 +72,7 @@ KeyError: 'color'
 >>> eggs
 {'name': 'dogg', 'cspecies': 'cat', 'age': 8, 'color': 'black'} 
 >>> 
-# setdefault() method doesn't anything if the value is already set in the ditionary
+# setdefault() method doesn't do anything if the value is already set in the ditionary
 >>> eggs.setdefault('color', 'orange') 
 'black'
 >>> 
