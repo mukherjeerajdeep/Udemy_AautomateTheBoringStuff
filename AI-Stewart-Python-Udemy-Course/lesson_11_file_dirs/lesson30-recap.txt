@@ -1,34 +1,3 @@
-# Udemy_AautomateTheBoringStuff
-Practice codes and lessons from the Book https://automatetheboringstuff.com/
-
-Youtube link :
-https://www.youtube.com/watch?v=_AEJHKGk9ns
-
-```python
-# Deep copy example
-
-import copy
-
-spam = [0,2,1,2,3]
-cheese = copy.deepcopy(spam)
-cheese
->>[0, 2, 1, 2, 3]
-
-
-spam
->>[0, 2, 1, 2, 3]
-
-spam[2] = 'Hello'
-spam
->>>[0, 2, 'Hello', 2, 3]
-cheese
->>>[0, 2, 1, 2, 3]
-
-```
-
-Files and Directories
-
-```text
 Files have a name and a path.
 The root folder is the lowest folder.
 In a file path, the folders and filename are separated by backslashes on Windows and forward slashes on Linux and Mac.
@@ -45,5 +14,3 @@ os.path.getsize() returns a file's size.
 os.listdir() returns a list of strings of filenames.
 os.path.exists() returns True if the filename passed to it exists.
 os.path.isfile() and os.path.isdir() return True if they were passed a filename or file path.
-```
-
