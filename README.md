@@ -4,30 +4,23 @@ Practice codes and lessons from the Book https://automatetheboringstuff.com/
 Youtube link :
 https://www.youtube.com/watch?v=_AEJHKGk9ns
 
-```python
-# Deep copy example
+Basic Practice:
+http://codingbat.com/python
 
-import copy
+More Mathematical (and Harder) Practice:
+https://projecteuler.net/archives
 
-spam = [0,2,1,2,3]
-cheese = copy.deepcopy(spam)
-cheese
->>[0, 2, 1, 2, 3]
+List of Practice Problems:
+http://www.codeabbey.com/index/task_list
+
+A SubReddit Devoted to Daily Practice Problems:
+https://www.reddit.com/r/dailyprogrammer
+
+A very tricky website with very few hints and touch problems (Not for beginners but still interesting)
+http://www.pythonchallenge.com/
 
 
-spam
->>[0, 2, 1, 2, 3]
-
-spam[2] = 'Hello'
-spam
->>>[0, 2, 'Hello', 2, 3]
-cheese
->>>[0, 2, 1, 2, 3]
-
-```
-
-Files and Directories
-
+Things to install
 
 ```commandline
 C:\Rajdeep_Mukherjee\Udemy_AautomateTheBoringStuff\AI-Stewart-Python-Udemy-Course\lesson_13_websrcapping>c:\Python\python.exe -m pip install --upgrade pip

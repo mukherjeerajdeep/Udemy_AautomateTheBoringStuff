@@ -1,14 +1,9 @@
 This is for the debugging console errors and examples
 
-```doctest
-The logging module lets you display logging messages.
-Log messages create a "breadcrumb trail" of what your program is doing.
-After calling logging.basicConfig() to set up logging, call logging.debug(‘This is the message') to create a log message.
-When done, you can disable the log messages with logging.disable(logging.CRITICAL)
-Don't use print() for log messages: It's hard to remove the mall when you're done debugging.
-The five log levels are: DEBUG, INFO, WARNING, ERROR, and CRITICAL.
-You can also log to a file instead of the screen with the filename keyword argument in the logging.basicConfig() function.
-```
+You can raise your own exceptions: **raise Exception(‘This is the error message.')**
+You can also use assertions: assert condition, ‘Error message'
+Assertions are for detecting programmer errors that are not meant to be recovered from. 
+User errors should raise exceptions.
 
 ```python
 >>> 
@@ -83,3 +78,17 @@ Traceback (most recent call last):
 AssertionError: This is another kind of error
 >>> 
 ```
+
+The logging module lets you display logging messages.
+
+Log messages create a "breadcrumb trail" of what your program is doing.
+After calling **logging.basicConfig()** to set up logging, call logging.debug(‘This is the message') to create a log message.
+
+When done, you can disable the log messages with logging.disable(logging.CRITICAL)
+Don't use print() for log messages: It's hard to remove the mall when you're done debugging.
+
+The five log levels are: DEBUG, INFO, WARNING, ERROR, and CRITICAL.
+You can also log to a file instead of the screen with the filename keyword argument in the logging.basicConfig() function.
+
+
+
