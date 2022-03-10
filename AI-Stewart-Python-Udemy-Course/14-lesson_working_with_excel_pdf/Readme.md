@@ -10,96 +10,165 @@ The cell() method also returns a Cell object from a sheet.
 import openpyxl
 
 import os
-os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_13_websrcapping'
-
-
-os.chdir('C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_14_working_with_excel_pdf')
 
 os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_14_working_with_excel_pdf'
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\13-lesson-websrcapping'
+
+os.chdir('/AI-Stewart-Python-Udemy-Course/14-lesson_working_with_excel_pdf')
+
+os.getcwd()
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-lesson_working_with_excel_pdf'
 
 workbook = openpyxl.load_workbook('test.xlsx')
 
 type(workbook)
-<class 'openpyxl.workbook.workbook.Workbook'>
+<
+
+class 'openpyxl.workbook.workbook.Workbook'>
+
 
 sheet = workbook.get_sheet_by_name('sheet1')
 
-Warning (from warnings module):
-  File "<pyshell#94>", line 1
-DeprecationWarning: Call to deprecated function get_sheet_by_name (Use wb[sheetname]).
-Traceback (most recent call last):
-  File "<pyshell#94>", line 1, in <module>
-    sheet = workbook.get_sheet_by_name('sheet1')
-  File "C:\Python\lib\site-packages\openpyxl\compat\__init__.py", line 38, in new_func1
-    return func1(*args, **kwargs)
-  File "C:\Python\lib\site-packages\openpyxl\workbook\workbook.py", line 262, in get_sheet_by_name
-    return self[name]
-  File "C:\Python\lib\site-packages\openpyxl\workbook\workbook.py", line 288, in __getitem__
-    raise KeyError("Worksheet {0} does not exist.".format(key))
+Warning(
+from warnings module):
+File
+"<pyshell#94>", line
+1
+DeprecationWarning: Call
+to
+deprecated
+function
+get_sheet_by_name(Use
+wb[sheetname]).
+Traceback(most
+recent
+call
+last):
+File
+"<pyshell#94>", line
+1, in < module >
+sheet = workbook.get_sheet_by_name('sheet1')
+File
+"C:\Python\lib\site-packages\openpyxl\compat\__init__.py", line
+38, in new_func1
+return func1(*args, **kwargs)
+File
+"C:\Python\lib\site-packages\openpyxl\workbook\workbook.py", line
+262, in get_sheet_by_name
+return self[name]
+File
+"C:\Python\lib\site-packages\openpyxl\workbook\workbook.py", line
+288, in __getitem__
+raise KeyError("Worksheet {0} does not exist.".format(key))
 KeyError: 'Worksheet sheet1 does not exist.'
 
 sheet = workbook.get_sheet_by_name('Sheet1')
 
 type(sheet)
-<class 'openpyxl.worksheet.worksheet.Worksheet'>
+<
+
+class 'openpyxl.worksheet.worksheet.Worksheet'>
 
 # if we don't know the sheet names
+
+
 sheets = workbook.get_sheet_names()
 
-Warning (from warnings module):
-  File "<pyshell#101>", line 1
-DeprecationWarning: Call to deprecated function get_sheet_names (Use wb.sheetnames).
+Warning(
+from warnings module):
+File
+"<pyshell#101>", line
+1
+DeprecationWarning: Call
+to
+deprecated
+function
+get_sheet_names(Use
+wb.sheetnames).
 
 sheets
 ['Sheet1']
 
-#get the contents from the cell of the sheet
+# get the contents from the cell of the sheet
 sheet['A1']
-<Cell 'Sheet1'.A1>
+< Cell
+'Sheet1'.A1 >
 
 cellA = sheet['A1']
 
 cellA.value()
-Traceback (most recent call last):
-  File "<pyshell#110>", line 1, in <module>
-    cellA.value()
-TypeError: 'str' object is not callable
-
+Traceback(most
+recent
+call
+last):
+File
+"<pyshell#110>", line
+1, in < module >
+cellA.value()
+TypeError: 'str'
+object is not callable
 
 cellA = sheet['A1']
 cellA
-<Cell 'Sheet1'.A1>
+< Cell
+'Sheet1'.A1 >
 
 cellA.value()
-Traceback (most recent call last):
-  File "<pyshell#116>", line 1, in <module>
-    cellA.value()
-TypeError: 'str' object is not callable
+Traceback(most
+recent
+call
+last):
+File
+"<pyshell#116>", line
+1, in < module >
+cellA.value()
+TypeError: 'str'
+object is not callable
 
 type(cellA)
-<class 'openpyxl.cell.cell.Cell'>
+<
+
+class 'openpyxl.cell.cell.Cell'>
+
 
 type(cellA.value())
-Traceback (most recent call last):
-  File "<pyshell#120>", line 1, in <module>
-    type(cellA.value())
-TypeError: 'str' object is not callable
+Traceback(most
+recent
+call
+last):
+File
+"<pyshell#120>", line
+1, in < module >
+type(cellA.value())
+TypeError: 'str'
+object is not callable
 
 cellA
-<Cell 'Sheet1'.A1>
+< Cell
+'Sheet1'.A1 >
 cellA.value()
-Traceback (most recent call last):
-  File "<pyshell#123>", line 1, in <module>
-    cellA.value()
-TypeError: 'str' object is not callable
+Traceback(most
+recent
+call
+last):
+File
+"<pyshell#123>", line
+1, in < module >
+cellA.value()
+TypeError: 'str'
+object is not callable
 
 cellA.value()
-Traceback (most recent call last):
-  File "<pyshell#125>", line 1, in <module>
-    cellA.value()
-TypeError: 'str' object is not callable
+Traceback(most
+recent
+call
+last):
+File
+"<pyshell#125>", line
+1, in < module >
+cellA.value()
+TypeError: 'str'
+object is not callable
 
 cellA.value
 'Repo'
@@ -110,7 +179,6 @@ str(cellA.value)
 str(sheet['C1'].value)
 'Check prod num'
 
-
 str(sheet['D2'].value)
 'CAHxxxx'
 
@@ -119,77 +187,192 @@ str(sheet['D5'].value)
 
 # with numbers
 sheet.cell(row=1, column=1)
-<Cell 'Sheet1'.A1>
+< Cell
+'Sheet1'.A1 >
 
 # printing lot more cells
 
 for i in range(1, 8):
     print(i, sheet.cell(row=i, column=1).value)
 
-    
-1 Repo
-2 5g/sys
-3 5g/src/ucl
-4 None
-5 5g/pp
-6 5g/obs
-7 None
+1
+Repo
+2
+5
+g / sys
+3
+5
+g / src / ucl
+4
+None
+5
+5
+g / pp
+6
+5
+g / obs
+7
+None
 
 # or to print all
 for k in range(1, 8):
     for v in range(1, 8):
-        print(k,v, sheet.cell(row=k, column=v).value)
+        print(k, v, sheet.cell(row=k, column=v).value)
 
-        
-1 1 Repo
-1 2 Type
-1 3 Check prod num
-1 4 Product number
-1 5 None
-1 6 None
-1 7 None
-2 1 5g/sys
-2 2 Source
-2 3 CXS1040095/1
-2 4 CAHxxxx
-2 5 None
-2 6 None
-2 7 None
-3 1 5g/src/ucl
-3 2 Source
-3 3 CAF101148
-3 4 CAHxxxx
-3 5 None
-3 6 None
-3 7 None
-4 1 None
-4 2 None
-4 3 CAF101148/1
-4 4 None
-4 5 None
-4 6 None
-4 7 None
-5 1 5g/pp
-5 2 Source
-5 3 CXS1040092/1
-5 4 CAHxxxx
-5 5 None
-5 6 None
-5 7 None
-6 1 5g/obs
-6 2 Source
-6 3 CXS2010066/1
-6 4 CAHxxxx
-6 5 None
-6 6 None
-6 7 None
-7 1 None
-7 2 None
-7 3 CXS2010070/1
-7 4 None
-7 5 None
-7 6 None
-7 7 None
+1
+1
+Repo
+1
+2
+Type
+1
+3
+Check
+prod
+num
+1
+4
+Product
+number
+1
+5
+None
+1
+6
+None
+1
+7
+None
+2
+1
+5
+g / sys
+2
+2
+Source
+2
+3
+CXS1040095 / 1
+2
+4
+CAHxxxx
+2
+5
+None
+2
+6
+None
+2
+7
+None
+3
+1
+5
+g / src / ucl
+3
+2
+Source
+3
+3
+CAF101148
+3
+4
+CAHxxxx
+3
+5
+None
+3
+6
+None
+3
+7
+None
+4
+1
+None
+4
+2
+None
+4
+3
+CAF101148 / 1
+4
+4
+None
+4
+5
+None
+4
+6
+None
+4
+7
+None
+5
+1
+5
+g / pp
+5
+2
+Source
+5
+3
+CXS1040092 / 1
+5
+4
+CAHxxxx
+5
+5
+None
+5
+6
+None
+5
+7
+None
+6
+1
+5
+g / obs
+6
+2
+Source
+6
+3
+CXS2010066 / 1
+6
+4
+CAHxxxx
+6
+5
+None
+6
+6
+None
+6
+7
+None
+7
+1
+None
+7
+2
+None
+7
+3
+CXS2010070 / 1
+7
+4
+None
+7
+5
+None
+7
+6
+None
+7
+7
+None
 
 ```
 
@@ -229,7 +412,7 @@ sheet['A1'].value
 42
 
 os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_14_working_with_excel_pdf'
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-lesson_working_with_excel_pdf'
 
 sheet['A2'].value = 'hello'
 
@@ -323,7 +506,7 @@ AttributeError: module 'os' has no attribute 'getswd'. Did you mean: 'getcwd'?
 import os
 
 os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_14_working_with_excel_pdf'
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-lesson_working_with_excel_pdf'
 
 
 

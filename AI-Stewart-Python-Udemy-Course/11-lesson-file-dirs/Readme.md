@@ -37,9 +37,9 @@ The **shelve.open()** function returns a dictionary-like shelf value.
 import os
 
 os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_14_working_with_excel_pdf'
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-lesson_working_with_excel_pdf'
 
-os.chdir('C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs')
+os.chdir('/AI-Stewart-Python-Udemy-Course/lesson_11_file_dirs')
 
 hellofile = open('hello.txt')
 hellofile.read()
@@ -59,7 +59,6 @@ content
 
 hellofile.close()
 
-
 hellofile = open('hello.txt')
 content = hellofile.readlines()
 content
@@ -68,7 +67,6 @@ content
 # way of representation is different
 
 hellofile.close()
-  
 
 hellofile = open('hello.txt', 'w')
 hellofile.write('\nI am adding this line')
@@ -76,16 +74,24 @@ hellofile.write('\nI am adding this line')
 
 hellofile.close()
 
-
 baconfile = open('hello.txt', 'a')
 
 # **hellofile** is already closed as the, hence the error  
 
 hellofile.write('\nI am adding this another line')
-Traceback (most recent call last):
-  File "<pyshell#484>", line 1, in <module>
-    hellofile.write('\nI am adding this another line')
-ValueError: I/O operation on closed file.
+Traceback(most
+recent
+call
+last):
+File
+"<pyshell#484>", line
+1, in < module >
+hellofile.write('\nI am adding this another line')
+ValueError: I / O
+operation
+on
+closed
+file.
 
 baconfile.write('\nI am adding this another line')
 30
@@ -178,56 +184,91 @@ Lesson 32
 Copying and moving the files and folders
 
 ```python
->>> import shutil
->>> 
->>> shutil.copy('C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\test.txt', 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\test\\test.txt')
-Traceback (most recent call last):
-  File "<pyshell#336>", line 1, in <module>
-    shutil.copy('C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\test.txt', 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\test\\test.txt')
-  File "C:\Program Files\Python38\lib\shutil.py", line 415, in copy
-    copyfile(src, dst, follow_symlinks=follow_symlinks)
-  File "C:\Program Files\Python38\lib\shutil.py", line 261, in copyfile
-    with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
-FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\test\\test.txt'
->>> shutil.copy('C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\test.txt', 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\test\\test.txt')
+>> > import shutil
+>> >
+>> > shutil.copy(
+    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test.txt',
+    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test\\test.txt')
+Traceback(most
+recent
+call
+last):
+File
+"<pyshell#336>", line
+1, in < module >
+shutil.copy(
+    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test.txt',
+    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test\\test.txt')
+File
+"C:\Program Files\Python38\lib\shutil.py", line
+415, in copy
+copyfile(src, dst, follow_symlinks=follow_symlinks)
+File
+"C:\Program Files\Python38\lib\shutil.py", line
+261, in copyfile
+with open(src, 'rb') as fsrc, open(dst, 'wb') as fdst:
+    FileNotFoundError: [Errno 2]
+No
+such
+file or directory: 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\test\\test.txt'
+>> > shutil.copy(
+    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test.txt',
+    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test\\test.txt')
 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\test\\test.txt'
->>> 
->>> 
->>> shutil.copytree('C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\test' , 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\copytree')
+>> >
+>> >
+>> > shutil.copytree(
+    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test',
+    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/copytree')
 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\copytree'
->>> 
->>> 
->>> 
->>> shutil.copy('C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\test\\test.txt' , 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\copytree\\teststets.txt')
+>> >
+>> >
+>> >
+>> > shutil.copy(
+    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test\\test.txt',
+    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/copytree\\teststets.txt')
 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\copytree\\teststets.txt'
->>> 
->>> 
->>> 
->>> import os
->>> 
->>> os..getcwd()
-SyntaxError: invalid syntax
->>> os.getcwd()
+>> >
+>> >
+>> >
+>> > import os
+>> >
+>> > os..getcwd()
+SyntaxError: invalid
+syntax
+>> > os.getcwd()
 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs'
->>> 
->>> 
->>> os.rmdir('C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\delete')
-Traceback (most recent call last):
-  File "<pyshell#354>", line 1, in <module>
-    os.rmdir('C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\delete')
-OSError: [WinError 145] The directory is not empty: 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\delete'
->>> 
->>> import shutil
->>> 
->>> shutil.rmtree('C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\delete')
-= RESTART: C:/Rajdeep_Mukherjee/Udemy_AautomateTheBoringStuff/AI-Stewart-Python-Udemy-Course/lesson_11_file_dirs/dryrun-delete-files-folders.py
-dryrun-delete-files-folders.py
-test-program-open-file.py
->>> os.chdir('C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs')
->>> os.listdir()
-['copytree', 'dryrun-delete-files-folders.py', 'lesson30-recap.txt', 'lesson31-recap.txt', 'test', 'test-program-open-file.py', 'test.txt']
->>> 
->>> 
+>> >
+>> >
+>> > os.rmdir(
+    'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\delete')
+Traceback(most
+recent
+call
+last):
+File
+"<pyshell#354>", line
+1, in < module >
+os.rmdir(
+    'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\delete')
+OSError: [WinError 145]
+The
+directory is not empty: 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\delete'
+>> >
+>> > import shutil
+>> >
+>> > shutil.rmtree(
+    'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\delete')
+= RESTART: C: / Rajdeep_Mukherjee / Udemy_AautomateTheBoringStuff / AI - Stewart - Python - Udemy - Course / lesson_11_file_dirs / dryrun - delete - files - folders.py
+dryrun - delete - files - folders.py
+test - program - open - file.py
+>> > os.chdir(
+    'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs')
+>> > os.listdir()
+['copytree', 'dryrun-delete-files-folders.py', 'lesson30-recap.txt', 'lesson31-recap.txt', 'test',
+ 'test-program-open-file.py', 'test.txt']
+>> >
+>> > 
 ```
 
 ```html
@@ -270,4 +311,25 @@ Lesson 34
 ```html
 [Relative and Absolute Path](https://automatetheboringstuff.com/2e/images/000057.jpg)
 ![Relative and Absolute Path](C:\Rajdeep_Mukherjee\The relative paths for folders and files in the working directory.jpg)
+```
+```python
+with open('test.txt', mode='a') as f:
+    f.write('\nWhat am i doing')
+    
+16
+
+with open('test.txt', mode='r') as f:
+    f.readline()
+    
+"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n"
+
+with open('test.txt', mode='r') as f:
+    f.readlines()
+    
+["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\n", 'What am i doing']
+
+with open('test_new.txt', mode='w') as f:
+    f.write('What am i doing')
+    
+15
 ```
