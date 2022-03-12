@@ -43,7 +43,7 @@ True
 [('size', 'fat'), ('color', 'gray'), ('disposition', 'loud')]
 >> >
 
-# get method knowhow
+# get method know-how
 
 >> > eggs = {'name': 'dogg', 'cspecies': 'cat', 'age': 8}
 >> >
@@ -109,21 +109,6 @@ Some more dictionary method calls
 >> >
 >> >
 >> > d = {'k1': 123,
-          'k2': [1, 2, 3]
-          'k3': {'inside': 100
-
-                 SyntaxError: invalid syntax
-                 >> > d = {'k1': 123,
-                           'k2': [1, 2, 3]
-                           'k3': {'inside': 100}
-
-                           SyntaxError: invalid syntax
-                           >> > d = {'k1': 123,
-                                     'k2': [1, 2, 3]
-                                     'k3': {'inside': 100}}
-SyntaxError: invalid
-syntax
->> > d = {'k1': 123,
           'k2': [1, 2, 3],
           'k3': {'inside': 100}}
          >> >
@@ -147,29 +132,6 @@ syntax
 >> > pprint.pprint(d)
 {'k1': 123, 'k2': [1, 2, 3], 'k3': {'inside': 100}, 'k4': 'old'}
 >> >
->> > pprint.PrettyPrinter(d)
-Traceback(most
-recent
-call
-last):
-File
-"<pyshell#92>", line
-1, in < module >
-        pprint.PrettyPrinter(d)
-File
-"C:\Python\lib\pprint.py", line
-129, in __init__
-indent = int(indent)
-TypeError: int()
-argument
-must
-be
-a
-string, a
-bytes - like
-object or a
-number, not 'dict'
-            >> > d.keys()
 dict_keys(['k1', 'k2', 'k3', 'k4'])
 >> >
 >> > d.values()
@@ -181,50 +143,11 @@ dict_items([('k1', 123), ('k2', [1, 2, 3]), ('k3', {'inside': 100}), ('k4', 'old
 >> > list(d.items())
      [('k1', 123), ('k2', [1, 2, 3]), ('k3', {'inside': 100}), ('k4', 'old')]
      >> >
->> > for k, v in list(d.items()):
-    print(k.v)
-
-Traceback(most
-recent
-call
-last):
-File
-"<pyshell#103>", line
-2, in < module >
-        print(k.v)
-AttributeError: 'str'
-object
-has
-no
-attribute
-'v'
 >> >
 for k, v in d.items():
     print(k.v)
 print(k.v)
 
-SyntaxError: invalid
-syntax
->> >
-for k, v in d.items():
-    print(k.v)
-
-Traceback(most
-recent
-call
-last):
-File
-"<pyshell#106>", line
-2, in < module >
-        print(k.v)
-AttributeError: 'str'
-object
-has
-no
-attribute
-'v'
->> >
->> >
 >> >
 >> > for k, v in d.items():
     print(k, v)

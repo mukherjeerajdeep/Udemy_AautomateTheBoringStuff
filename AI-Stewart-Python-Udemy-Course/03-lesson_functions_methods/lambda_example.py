@@ -44,4 +44,5 @@ def using_nothing():
     )
         , [1, 2, 3])
 
+
 using_nothing()
