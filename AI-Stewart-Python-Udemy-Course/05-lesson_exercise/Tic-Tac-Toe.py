@@ -10,7 +10,6 @@ def display_board_init():
 
 
 def display_board(game_data):
-    print("Updated game data")
     clear_output()
     print(game_data['up-left'] + '|' + game_data['up-center'] + '|' + game_data['up-right'])
     print('-' * 5)
