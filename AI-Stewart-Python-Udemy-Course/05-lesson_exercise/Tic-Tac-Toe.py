@@ -10,7 +10,7 @@ def display_board_init():
 
 
 def display_board(game_data):
-    clear_output()
+    print(' '*100)
     print("Updated game data")
     print(game_data['up-left'] + '|' + game_data['up-center'] + '|' + game_data['up-right'])
     print('-' * 5)
@@ -19,60 +19,47 @@ def display_board(game_data):
     print(game_data['low-left'] + '|' + game_data['low-center'] + '|' + game_data['low-right'])
 
 
-def position_choice(game_data, player_data):
-    position, choice = input_validator(game_data, player_data)
+def player_position_choice(game_data, player_data):
+    position = validate_position(game_data, player_data)
+    choice = player_data.get('choice')
+    return update_board(game_data, choice, position)
 
-    # if not is_position_empty(game_data, position):
-    #     update_choice(game_data)
-
-    # position = int(position)
-    return update_board(choice, game_data, position)
-
-# This is the validator for the input
-def input_validator(game_data, player_data):
+# This is the validator for the input position
+def validate_position(game_data, player_data):
     while True:
         position = input(f"{player_data.get('name')}, please enter a position between 1-9: ")
-        # choice = ' '
-        choice = player_data.get('choice')
 
         if position.isdigit() and int(position) in range(1, 10):
             position = int(position)
-
-            if is_position_empty(game_data, position):
-                # while choice.upper() not in ['X', 'O']:
-                #     choice = input("Please enter your choice with 'X' or 'O': ")
-                #     return position, choice
-                return position, choice
+            if is_an_empty_position(game_data, position):
+                return position
             else:
+                print("The position is already occupied, please chose another position")
                 pass
 
-# Return True/False based on the position
-def is_position_empty(game_data, position):
-    position = position_to_key(position)
 
-    if game_data[position].upper() in ['X', 'O']:
-        print("The position is already occupied, please chose another position")
-        return False
+def is_an_empty_position(game_data, position):
+    position = position_to_key(position)
+    if game_data[position] == ' ':
+        return True
+
+    return False
+
+def update_board(game_data, choice, position):
+    position = position_to_key(position)
+    game_data[position] = choice
+
+    return game_data
+
+
+def is_board_full(game_data):
+    for position in range(1, 10):
+        if is_an_empty_position(game_data, position):
+            return False
 
     return True
 
-#
-def update_choice(game_data):
-    position, choice = input_validator(game_data)
-    position = position_to_key(position)
-
-    game_data[position] = choice
-
-    return game_data
-
-
-def update_board(choice, game_data, position):
-    position = position_to_key(position)
-    game_data[position] = choice
-
-    return game_data
-
-
+# Utility function to convert
 def position_to_key(argument):
     switcher = {
         1: 'up-left',
@@ -109,54 +96,18 @@ def wish_to_replay():
         return replay.upper() == 'Y'
 
 
-def is_game_finished(game_data, players_data):
-    isWin = False
-    choice = ' '
-
-    if game_data['up-left'] == game_data['up-center'] == game_data['up-right']\
-            and game_data['mid-left'].upper() in ['X', 'O']:
-        if game_data['up-left'] == 'X':
-            choice = 'X'
-        else:
-            choice = 'O'
-
-        isWin = True
-    # elif game_data['mid-left'] == game_data['mid-center'] == game_data['mid-right'] \
-    #         and game_data['mid-left'].upper() in ['X', 'O']:
-    #     return winner_name_selection(game_data['up-left'], players_data)
-    # elif game_data['low-left'] == game_data['low-center'] == game_data['low-right']\
-    #         and game_data['low-left'].upper() in ['X', 'O']:
-    #     return winner_name_selection(game_data['up-left'], players_data)
-    # elif game_data['up-left'] == game_data['mid-center'] == game_data['low-right']\
-    #         and game_data['up-left'].upper() in ['X', 'O']:
-    #     return winner_name_selection(game_data['up-left'], players_data)
-    # elif game_data['up-right'] == game_data['mid-center'] == game_data['low-left']\
-    #         and game_data['up-right'].upper() in ['X', 'O']:
-    #     return winner_name_selection(game_data['up-left'], players_data)
-    # elif game_data['up-left'] == game_data['mid-left'] == game_data['low-left']\
-    #         and game_data['up-left'].upper() in ['X', 'O']:
-    #     return winner_name_selection(game_data['up-left'], players_data)
-    # elif game_data['up-center'] == game_data['mid-center'] == game_data['low-center']\
-    #         and game_data['up-center'].upper() in ['X', 'O']:
-    #     return winner_name_selection(game_data['up-left'], players_data)
-    # elif game_data['up-right'] == game_data['mid-right'] == game_data['low-right']\
-    #         and game_data['up-right'].upper() in ['X', 'O']:
-    #     return winner_name_selection(game_data['up-left'], players_data)
-
-    if isWin:
-        return winner_name_selection(choice, players_data)
-
-    return False
+def is_game_won(game_data, choice):
+    return game_data['up-left'] == game_data['up-center'] == game_data['up-right'] == choice or \
+           game_data['mid-left'] == game_data['mid-center'] == game_data['mid-right'] == choice or \
+           game_data['low-left'] == game_data['low-center'] == game_data['low-right'] == choice or \
+           game_data['up-left'] == game_data['mid-center'] == game_data['low-right'] == choice or \
+           game_data['up-right'] == game_data['mid-center'] == game_data['low-left'] == choice or \
+           game_data['up-left'] == game_data['mid-left'] == game_data['low-left'] == choice or \
+           game_data['up-center'] == game_data['mid-center'] == game_data['low-center'] == choice or \
+           game_data['up-right'] == game_data['mid-right'] == game_data['low-right'] == choice
 
 
-def winner_name_selection(choice, players_data):
-    for values in players_data.values():
-        if values.get('choice').upper() == choice:
-            print(f"{values.get('name')} won the match")
-    return True
-
-
-def update_player_details():
+def init():
     players_data = {
                    'Player1': {
                                 'name': '',
@@ -168,62 +119,120 @@ def update_player_details():
                               }
                    }
 
-    print("Player 1, please enter your name: ")
-    players_data['Player1']['name'] = input()
-    print("Player 1, please enter your choice: ")
-    players_data['Player1']['choice'] = input()
+    players_input(players_data)
 
-    print("Player 2, please enter your name: ")
-    players_data['Player2']['name'] = input()
-
-    if players_data['Player1']['choice'].upper() == 'X':
-        players_data['Player2']['choice'] = 'O'
-    else:
-        players_data['Player2']['choice'] = 'X'
-
-    return players_data
-
-
-def game_start():
-    game_on = True
-    replay = True
-
-    print("initial board data")
-    display_board_init()
     game_data = {'up-left': ' ', 'up-center': ' ', 'up-right': ' ',
                  'mid-left': ' ', 'mid-center': ' ', 'mid-right': ' ',
                  'low-left': ' ', 'low-center': ' ', 'low-right': ' '}
 
-    players_data = update_player_details()
+    return players_data, game_data
 
-    while replay:
+
+def players_input(players_data):
+    print("Player 1, please enter your name: ")
+    players_data['Player1']['name'] = input().upper()
+    print("Player 1, please enter your choice between X/O: ")
+    player_choice = input()
+
+    player_choice = validate_choice(player_choice, players_data)
+    players_data['Player1']['choice'] = player_choice.upper()
+
+    print("Player 2, please enter your name: ")
+    players_data['Player2']['name'] = input().upper()
+
+    if player_choice.upper() == 'X':
+        players_data['Player2']['choice'] = 'O'
+    else:
+        players_data['Player2']['choice'] = 'X'
+
+
+def validate_choice(player_choice, players_data):
+    while player_choice.upper() not in ['X', 'O']:
+        print("Not a valid choice, please select between 'X' or 'O'")
+        player_choice = input()
+
+    return player_choice
+
+
+def turn_flipper(players_data):
+    flip = random.randint(0, 1)
+
+    if flip == 0:
+        print(f"{players_data['Player1']} starts")
+        player = players_data['Player1'] # Player1
+    else:
+        print(f"{players_data['Player2']} starts")
+        player = players_data['Player2'] # Player2
+
+    return player
+
+
+def game_start():
+    game_on = True
+    print("initial board data")
+    display_board_init()
+
+    while True:
+        # Initialize the data for players and game
+
+        players_data, game_data = init()
+        # Flip the coin, and select the player
+        current_player = turn_flipper(players_data)
+        print(f"{current_player.get('name')} goes first")
+
+        play_game = input('Ready to play? y or n?')
+
+        if play_game.upper() == 'N':
+            game_on = False
+
         while game_on:
-            # Display the board first time
-            display_board(game_data)
-
             # Start asking the user for choice
-            randint = random.randint(0, 1)
-            if randint == 0:
-                print("Player1 starts")
-                game_data = position_choice(game_data, players_data['Player1'])
+            if current_player == players_data['Player1']:
+                display_board(game_data) # show the board
+                # chose a position
+                game_data = player_position_choice(game_data, current_player)
+                # display the board to user
+                display_board(game_data)
+                # check if they won
+                if is_game_won(game_data, current_player.get('choice')):
+                    print(f"{current_player.get('name')} won")
+                    display_board(game_data)
+                    break
+                # or check if it is a tie
+                else:
+                    if is_board_full(game_data):
+                        print("It's a tie")
+                        display_board(game_data)
+                        break
+                    else:
+                        current_player = players_data['Player2']
+                # if no ties or wins then next players turn
             else:
-                print("Player2 starts")
-                game_data = position_choice(game_data, players_data['Player2'])
-
-            # Display the board again to user
-            display_board(game_data)
-
-            if is_game_finished(game_data, players_data):
-                break
-
-            # Check user wish to continue
-            if not wish_to_continue():
-                break
+                current_player = players_data['Player2']
+                display_board(game_data)  # show the board
+                # chose a position
+                game_data = player_position_choice(game_data, current_player)
+                # display the board to user
+                display_board(game_data)
+                # check if they won
+                if is_game_won(game_data, current_player.get('choice')):
+                    print(f"{current_player.get('name')} won")
+                    display_board(game_data)
+                    break
+                # or check if it is a tie
+                else:
+                    if is_board_full(game_data):
+                        print("It's a tie")
+                        display_board(game_data)
+                        break
+                    else:
+                        current_player = players_data['Player1']
 
         # Check if user want to replay
         if wish_to_replay():
             display_board_init()
         else:
             break
+
 
 game_start()
