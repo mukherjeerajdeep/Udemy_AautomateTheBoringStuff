@@ -75,16 +75,6 @@ def position_to_key(argument):
     return switcher.get(argument, "wrong choice")
 
 
-def wish_to_continue():
-    while True:
-        replay = input("Do you want to continue Y/N: ")
-
-        if replay.upper() not in ['Y', 'N']:
-            replay = input("Do you want to continue Y/N: ")
-
-        return replay.upper() == 'Y'
-
-
 def wish_to_replay():
     while True:
         replay = input("Do you want to replay Y/N: ")
