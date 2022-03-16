@@ -12,12 +12,12 @@ import openpyxl
 import os
 
 os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\13-lesson-websrcapping'
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\13-WebSrcapping'
 
-os.chdir('/AI-Stewart-Python-Udemy-Course/14-lesson_working_with_excel_pdf')
+os.chdir('/AI-Stewart-Python-Udemy-Course/14-Working-with-Excel-Pdf')
 
 os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-lesson_working_with_excel_pdf'
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-Working-with-Excel-Pdf'
 
 workbook = openpyxl.load_workbook('test.xlsx')
 
@@ -412,7 +412,7 @@ sheet['A1'].value
 42
 
 os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-lesson_working_with_excel_pdf'
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-Working-with-Excel-Pdf'
 
 sheet['A2'].value = 'hello'
 
@@ -506,7 +506,7 @@ AttributeError: module 'os' has no attribute 'getswd'. Did you mean: 'getcwd'?
 import os
 
 os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-lesson_working_with_excel_pdf'
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-Working-with-Excel-Pdf'
 
 
 

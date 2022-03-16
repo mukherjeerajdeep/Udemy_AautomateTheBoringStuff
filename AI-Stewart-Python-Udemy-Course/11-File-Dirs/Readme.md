@@ -37,7 +37,7 @@ The **shelve.open()** function returns a dictionary-like shelf value.
 import os
 
 os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-lesson_working_with_excel_pdf'
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-Working-with-Excel-Pdf'
 
 os.chdir('/AI-Stewart-Python-Udemy-Course/lesson_11_file_dirs')
 
@@ -187,8 +187,8 @@ Copying and moving the files and folders
 >> > import shutil
 >> >
 >> > shutil.copy(
-    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test.txt',
-    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test\\test.txt')
+    '/AI-Stewart-Python-Udemy-Course/11-File-Dirs/test.txt',
+    '/AI-Stewart-Python-Udemy-Course/11-File-Dirs/test\\test.txt')
 Traceback(most
 recent
 call
@@ -197,8 +197,8 @@ File
 "<pyshell#336>", line
 1, in < module >
 shutil.copy(
-    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test.txt',
-    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test\\test.txt')
+    '/AI-Stewart-Python-Udemy-Course/11-File-Dirs/test.txt',
+    '/AI-Stewart-Python-Udemy-Course/11-File-Dirs/test\\test.txt')
 File
 "C:\Program Files\Python38\lib\shutil.py", line
 415, in copy
@@ -212,21 +212,21 @@ No
 such
 file or directory: 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\test\\test.txt'
 >> > shutil.copy(
-    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test.txt',
-    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test\\test.txt')
+    '/AI-Stewart-Python-Udemy-Course/11-File-Dirs/test.txt',
+    '/AI-Stewart-Python-Udemy-Course/11-File-Dirs/test\\test.txt')
 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\test\\test.txt'
 >> >
 >> >
 >> > shutil.copytree(
-    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test',
-    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/copytree')
+    '/AI-Stewart-Python-Udemy-Course/11-File-Dirs/test',
+    '/AI-Stewart-Python-Udemy-Course/11-File-Dirs/copytree')
 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\copytree'
 >> >
 >> >
 >> >
 >> > shutil.copy(
-    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/test\\test.txt',
-    '/AI-Stewart-Python-Udemy-Course/11-lesson-file-dirs/copytree\\teststets.txt')
+    '/AI-Stewart-Python-Udemy-Course/11-File-Dirs/test\\test.txt',
+    '/AI-Stewart-Python-Udemy-Course/11-File-Dirs/copytree\\teststets.txt')
 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\lesson_11_file_dirs\\copytree\\teststets.txt'
 >> >
 >> >

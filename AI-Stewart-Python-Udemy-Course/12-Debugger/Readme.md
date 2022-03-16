@@ -81,11 +81,11 @@ NameError: name
 >> > os.getcwd()
 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course'
 >> >
->> > os.chdir('/AI-Stewart-Python-Udemy-Course/12-lesson_debgger')
+>> > os.chdir('/AI-Stewart-Python-Udemy-Course/12-Debugger')
 >> >
 >> >
 >> > os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\12-lesson_debgger'
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\12-Debugger'
 >> > try:
     raise Exception('This is the error message')
 except:

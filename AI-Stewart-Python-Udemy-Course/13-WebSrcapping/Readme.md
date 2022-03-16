@@ -52,14 +52,14 @@ import os
 os.getcwd()
 'C:\\Python'
 
-os.chdir('/AI-Stewart-Python-Udemy-Course/13-lesson-websrcapping')
+os.chdir('/AI-Stewart-Python-Udemy-Course/13-WebSrcapping')
 SyntaxError: (unicode error)
 'unicodeescape'
 codec
 can
 't decode bytes in position 20-23: truncated \UXXXXXXXX escape
 
-os.chdir('/AI-Stewart-Python-Udemy-Course/13-lesson-websrcapping')
+os.chdir('/AI-Stewart-Python-Udemy-Course/13-WebSrcapping')
 
 res = requests.get('https://automatetheboringstuff.com/files/rj.txt')
 playFile = open('RomeoJuliet.txt', 'wb')  # In binary form
