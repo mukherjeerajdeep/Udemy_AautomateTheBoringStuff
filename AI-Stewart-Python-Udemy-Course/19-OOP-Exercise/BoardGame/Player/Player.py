@@ -1,4 +1,3 @@
-
 class Player:
 
     def __init__(self, name):
@@ -20,3 +19,7 @@ class Player:
 
     def __str__(self):
         return f'Player {self.name} has {len(self.all_cards)} cards.'
+
+
+if __name__ == '__main__':
+    pass

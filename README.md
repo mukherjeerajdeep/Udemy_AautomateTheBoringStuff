@@ -19,6 +19,12 @@ https://www.reddit.com/r/dailyprogrammer
 A very tricky website with very few hints and touch problems (Not for beginners but still interesting)
 http://www.pythonchallenge.com/
 
+Python 3 Notebooks can be found here:
+
+https://github.com/Pierian-Data/Complete-Python-3-Bootcamp
+
+Slides : 
+https://drive.google.com/drive/folders/1CKqOQzst1cGURXGiRVivi2Xsc0n-X8CR?usp=sharing
 
 Things to install
 
