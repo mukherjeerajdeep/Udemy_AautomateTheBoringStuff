@@ -91,7 +91,9 @@ while game_on:
 
     # Otherwise, the game is still on!
 
-    # Start a new round and reset current cards "on the table"
+    # Start a new round and reset current cards "on the table", it's
+    # like a playing board where players are throwing their cards to
+    # match against each other.
     player_one_cards = []
     player_one_cards.append(player_one.remove_one())
 
