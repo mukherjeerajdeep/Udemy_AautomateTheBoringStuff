@@ -333,3 +333,27 @@ with open('test_new.txt', mode='w') as f:
     
 15
 ```
+**Advanced Modules Exercise Solutions**
+It's time to test your new skills, this puzzle project will combine multiple skills sets, including unzipping 
+files with Python, using os module to automatically search through lots of files.
+
+Your Goal
+This is a puzzle, so we don't want to give you too much guidance and instead have you figure out things on your own.
+
+There is a .zip file called 'unzip_me_for_instructions.zip', unzip it, open the .txt file with Python, 
+read the instructions and see if you can figure out what you need to do!
+
+```python
+for folder , sub_folders , files in os.walk(os.getcwd()+"\\extracted_content"):
+
+    for file in files:
+        file_path = folder+'\\'+file
+        with open(file_path, 'r') as f:
+            searcher = re.search(r'\d{3}-\d{3}-\d{4}', f.read())
+            if searcher is not None:
+                print(searcher.group())
+
+OUTPUT
+719-266-2837
+
+```

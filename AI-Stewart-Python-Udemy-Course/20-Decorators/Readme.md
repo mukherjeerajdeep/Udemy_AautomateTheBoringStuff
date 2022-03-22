@@ -1,5 +1,7 @@
 Decorators and their use cases 
 
+[Jose Portilla Decorator Presentation](https://docs.google.com/presentation/d/1K1GcA_VI72-Y7bBTWRD27dqkQRgMQOq-l0PwmISd2cE/edit#slide=id.g342ea89f58_0_35)
+
 ```python
 def func_needs_decorator(): # Simple sunction that runs 
     print('Hi i am desperately need a decorator')
@@ -52,6 +54,4 @@ def func_needs_decorator(): # Simple sunction that runs
 >>Some extra bit of code before the actual function runs
 >>Hi i am desperately need a decorator
 >>Some extra bit of code after the actual function runs
-
-
 ```
