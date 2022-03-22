@@ -64,7 +64,7 @@ phone
 **Identifiers**
 Now that we know the special character designations, we can use them along with quantifiers to define how many we expect.
 
-![Identifier](AI-Stewart-Python-Udemy-Course/10-Regex/Identifier.PNG)
+<img src="C:\Rajdeep_Mukherjee\Udemy_AautomateTheBoringStuff\AI-Stewart-Python-Udemy-Course\10-Regex\Identifier.PNG"/>
 
 ```python
 text = "My telephone number is 408-555-1234"
@@ -74,7 +74,7 @@ phone.group()
 ```
 **Quantifier**
 
-![Quantifier](AI-Stewart-Python-Udemy-Course/10-Regex/Quatifier.PNG)
+![](C:\Rajdeep_Mukherjee\Udemy_AautomateTheBoringStuff\AI-Stewart-Python-Udemy-Course\10-Regex\Quatifier.PNG)
 
 The `?` says the group matches zero or one times.
 The `*` says the group matches zero or more times.
