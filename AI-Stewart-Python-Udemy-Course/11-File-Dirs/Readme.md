@@ -265,6 +265,10 @@ There is a `.zip` file called '`unzip_me_for_instructions.zip`', unzip it, open 
 read the instructions and see if you can figure out what you need to do!
 
 ```python
+import os
+import re 
+
+# Expecting that the python programs is running in the same path where the extracted_content is extracted.
 for folder , sub_folders , files in os.walk(os.getcwd()+"\\extracted_content"):
 
     for file in files:
