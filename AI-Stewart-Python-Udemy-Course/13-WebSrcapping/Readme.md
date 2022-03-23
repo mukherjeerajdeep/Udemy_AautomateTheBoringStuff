@@ -202,7 +202,8 @@ soup.select('title')[0].getText()
 'Example Domain'
 ```
 Soup Syntax 
-![Soup Syntax ](C:\Rajdeep_Mukherjee\Udemy_AautomateTheBoringStuff\AI-Stewart-Python-Udemy-Course\13-WebSrcapping\Soup_Syntax.PNG)
+![Soup_Syntax](https://user-images.githubusercontent.com/43293317/159789501-228e3f41-dea9-442e-a679-045cf01eb397.PNG)
+
 
 ```python
 res = requests.get('https://en.wikipedia.org/wiki/Stephen_Hawking')
