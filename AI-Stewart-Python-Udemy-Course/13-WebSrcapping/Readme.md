@@ -204,6 +204,14 @@ soup.select('title')[0].getText()
 Soup Syntax 
 ![Soup_Syntax](https://user-images.githubusercontent.com/43293317/159789501-228e3f41-dea9-442e-a679-045cf01eb397.PNG)
 
+Soup Man-Page
+[BS4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class)
+
+Some Web Scrapping site :
+[1](http://www.example.com/)
+[2](https://toscrape.com/)
+[3](https://toscrape.com/)
+[4](https://quotes.toscrape.com)
 
 ```python
 res = requests.get('https://en.wikipedia.org/wiki/Stephen_Hawking')
@@ -469,7 +477,134 @@ pprint.pprint(two_star_titles)
  "It's Only the Himalayas",
  'How Music Works',
  'Maude (1883-1993):She Grew Up with']
+```
 
+Exercise Solution for the Jose Portila
+[Exercise ToScrape](https://quotes.toscrape.com/tag/love/)
+
+```python
+import requests
+import bs4
+
+base_url = 'https://quotes.toscrape.com/page/{}/'
+
+base_url.format('1')
+'https://quotes.toscrape.com/page/1/'
+
+for _ in range(0,3):
+    print(base_url.format(_))
+
+    
+https://quotes.toscrape.com/page/0/
+https://quotes.toscrape.com/page/1/
+https://quotes.toscrape.com/page/2/
+
+res_home = requests.get(base_url.format('1'))
+
+res_home
+<Response [200]>
+
+res_home.text
+
+
+
+pprint.pprint(res_home.text)
+OUTPUT
+```
+```html
+('<!DOCTYPE html>\n'
+ '<html lang="en">\n'
+ '<head>\n'
+ '\t<meta charset="UTF-8">\n'
+ '\t<title>Quotes to Scrape</title>\n'
+ '    <link rel="stylesheet" href="/static/bootstrap.min.css">\n'
+ '    <link rel="stylesheet" href="/static/main.css">\n'
+ '</head>\n'
+
+```
+Selecting the authors only in a set not list
+
+```python
+soup = bs4.BeautifulSoup(res_home.text, 'lxml')
+
+soup.select('small')
+[<small class="author" itemprop="author">Albert Einstein</small>, <small class="author" itemprop="author">J.K. Rowling</small>, <small class="author" itemprop="author">Albert Einstein</small>, <small class="author" itemprop="author">Jane Austen</small>, <small class="author" itemprop="author">Marilyn Monroe</small>, <small class="author" itemprop="author">Albert Einstein</small>, <small class="author" itemprop="author">André Gide</small>, <small class="author" itemprop="author">Thomas A. Edison</small>, <small class="author" itemprop="author">Eleanor Roosevelt</small>, <small class="author" itemprop="author">Steve Martin</small>]
+
+
+soup.select('small')[0]
+<small class="author" itemprop="author">Albert Einstein</small>
+
+OPTION 1
+authors = soup.find_all('small', class_ = 'author' )
+
+authors[0].text
+'Albert Einstein'
+
+type(authors)
+<class 'bs4.element.ResultSet'>
+
+OPTION 2
+soup.select('small')[0].text
+'Albert Einstein'
+
+for authors in soup.select('small'):
+    print(authors.text)
+
+    
+Albert Einstein
+J.K. Rowling
+Albert Einstein
+Jane Austen
+Marilyn Monroe
+Albert Einstein
+André Gide
+Thomas A. Edison
+Eleanor Roosevelt
+Steve Martin
+
+FULL PROGRAM
+
+auth_list = []
+for authors in soup.select('small'):
+    auth_list.append(authors.text)
+    print(auth_list)
+
+auth_list
+['Albert Einstein', 'J.K. Rowling', 'Albert Einstein', 'Jane Austen', 'Marilyn Monroe', 'Albert Einstein', 'André Gide', 'Thomas A. Edison', 'Eleanor Roosevelt', 'Steve Martin', 'Albert Einstein', 'J.K. Rowling', 'Albert Einstein', 'Jane Austen', 'Marilyn Monroe', 'Albert Einstein', 'André Gide', 'Thomas A. Edison', 'Eleanor Roosevelt', 'Steve Martin']
+
+
+set(auth_list)
+{'Albert Einstein', 'Thomas A. Edison', 'Jane Austen', 'Marilyn Monroe', 'André Gide', 'J.K. Rowling', 'Steve Martin', 'Eleanor Roosevelt'}
+ 
+```
+Selecting the Text Only, which is a class and hence it is inside the method call `soup.select()` as "`.text`", check the syntax above.
+
+```python
+for quote in soup.select('.text'):
+    print(quote.text)
+
+    
+“The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.”
+“It is our choices, Harry, that show what we truly are, far more than our abilities.”
+“There are only two ways to live your life. One is as though nothing is a miracle. The other is as thou
+```
+Top ten list for the favourite quotes 
+
+```python
+for topten in soup.select('.tag-item'):
+    print(topten.text.strip())
+
+    
+love
+inspirational
+life
+humor
+books
+reading
+friendship
+friends
+truth
+simile
 ```
 
 
