@@ -113,15 +113,7 @@ for i in range(1, 8):
 Repo
 2
 5
-g / sys
-3
-5
-g / src / ucl
-4
-None
-5
-5
-g / pp
+.....
 6
 5
 g / obs
@@ -153,125 +145,7 @@ number
 None
 1
 6
-None
-1
-7
-None
-2
-1
-5
-g / sys
-2
-2
-Source
-2
-3
-CXS1040095 / 1
-2
-4
-CAHxxxx
-2
-5
-None
-2
-6
-None
-2
-7
-None
-3
-1
-5
-g / src / ucl
-3
-2
-Source
-3
-3
-CAF101148
-3
-4
-CAHxxxx
-3
-5
-None
-3
-6
-None
-3
-7
-None
-4
-1
-None
-4
-2
-None
-4
-3
-CAF101148 / 1
-4
-4
-None
-4
-5
-None
-4
-6
-None
-4
-7
-None
-5
-1
-5
-g / pp
-5
-2
-Source
-5
-3
-CXS1040092 / 1
-5
-4
-CAHxxxx
-5
-5
-None
-5
-6
-None
-5
-7
-None
-6
-1
-5
-g / obs
-6
-2
-Source
-6
-3
-CXS2010066 / 1
-6
-4
-CAHxxxx
-6
-5
-None
-6
-6
-None
-6
-7
-None
-7
-1
-None
-7
-2
-None
+....
 7
 3
 CXS2010070 / 1
