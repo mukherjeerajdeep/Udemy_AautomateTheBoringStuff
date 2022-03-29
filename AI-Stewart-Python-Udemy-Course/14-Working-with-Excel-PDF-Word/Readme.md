@@ -1,10 +1,10 @@
 
 The OpenPyXL third-party module handles Excel spreadsheets (.xlsx files).
-openpyxl.load_workbook(filename) returns a Workbook object.
-get_sheet_names() and get_sheet_by_name() help get Worksheet objects.
-The square brackets in sheet[‘A1'] get Cell objects.
-Cell objects have a "value" member variable with the content of that cell.
-The cell() method also returns a Cell object from a sheet.
+`openpyxl.load_workbook(filename)` returns a Workbook object.
+`get_sheet_names()` and `get_sheet_by_name() `help get Worksheet objects.
+The square brackets in `sheet[‘A1']` get Cell objects.
+Cell objects have a "**_value_**" member variable with the content of that cell.
+The `cell()`method also returns a Cell object from a sheet.
 
 ```python
 import openpyxl
@@ -14,76 +14,36 @@ import os
 os.getcwd()
 'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\13-WebSrcapping'
 
-os.chdir('/AI-Stewart-Python-Udemy-Course/14-Working-with-Excel-Pdf')
+os.chdir('/AI-Stewart-Python-Udemy-Course/14-Working-with-Excel-PDF-Word')
 
 os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-Working-with-Excel-Pdf'
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-Working-with-Excel-PDF-Word'
 
 workbook = openpyxl.load_workbook('test.xlsx')
 
 type(workbook)
-<
-
-class 'openpyxl.workbook.workbook.Workbook'>
-
+<class 'openpyxl.workbook.workbook.Workbook'>
 
 sheet = workbook.get_sheet_by_name('sheet1')
 
-Warning(
-from warnings module):
-File
-"<pyshell#94>", line
-1
-DeprecationWarning: Call
-to
-deprecated
-function
-get_sheet_by_name(Use
-wb[sheetname]).
-Traceback(most
-recent
-call
-last):
-File
-"<pyshell#94>", line
-1, in < module >
-sheet = workbook.get_sheet_by_name('sheet1')
-File
-"C:\Python\lib\site-packages\openpyxl\compat\__init__.py", line
-38, in new_func1
-return func1(*args, **kwargs)
-File
-"C:\Python\lib\site-packages\openpyxl\workbook\workbook.py", line
-262, in get_sheet_by_name
-return self[name]
-File
-"C:\Python\lib\site-packages\openpyxl\workbook\workbook.py", line
-288, in __getitem__
-raise KeyError("Worksheet {0} does not exist.".format(key))
+Warning(from warnings module):
+File "<pyshell#94>", line 1 DeprecationWarning: Call to  deprecated function get_sheet_by_name(Use wb[sheetname]).
+Traceback(most recent call last): File "<pyshell#94>", line 1, in < module > sheet = workbook.get_sheet_by_name('sheet1')
+File "C:\Python\lib\site-packages\openpyxl\compat\__init__.py", line 38, in new_func1 return func1(*args, **kwargs)
+File "C:\Python\lib\site-packages\openpyxl\workbook\workbook.py", line 262, in get_sheet_by_name return self[name]
+File "C:\Python\lib\site-packages\openpyxl\workbook\workbook.py", line 288, in __getitem__ raise KeyError("Worksheet {0} does not exist.".format(key))
 KeyError: 'Worksheet sheet1 does not exist.'
 
 sheet = workbook.get_sheet_by_name('Sheet1')
 
 type(sheet)
-<
-
-class 'openpyxl.worksheet.worksheet.Worksheet'>
+<class 'openpyxl.worksheet.worksheet.Worksheet'>
 
 # if we don't know the sheet names
 
-
 sheets = workbook.get_sheet_names()
 
-Warning(
-from warnings module):
-File
-"<pyshell#101>", line
-1
-DeprecationWarning: Call
-to
-deprecated
-function
-get_sheet_names(Use
+Warning(from warnings module): File "<pyshell#101>", line 1 DeprecationWarning: Call to deprecated function get_sheet_names(Use
 wb.sheetnames).
 
 sheets
@@ -91,83 +51,38 @@ sheets
 
 # get the contents from the cell of the sheet
 sheet['A1']
-< Cell
-'Sheet1'.A1 >
+< Cell 'Sheet1'.A1 >
 
 cellA = sheet['A1']
 
 cellA.value()
-Traceback(most
-recent
-call
-last):
-File
-"<pyshell#110>", line
-1, in < module >
-cellA.value()
-TypeError: 'str'
-object is not callable
+Traceback(most recent call last):File "<pyshell#110>", line 1, in < module > cellA.value() 
+TypeError: 'str' object is not callable
 
 cellA = sheet['A1']
 cellA
-< Cell
-'Sheet1'.A1 >
+< Cell 'Sheet1'.A1 >
 
 cellA.value()
-Traceback(most
-recent
-call
-last):
-File
-"<pyshell#116>", line
-1, in < module >
-cellA.value()
-TypeError: 'str'
+Traceback(most recent call last): File "<pyshell#116>", line 1, in < module > cellA.value() TypeError: 'str' 
 object is not callable
 
 type(cellA)
-<
-
-class 'openpyxl.cell.cell.Cell'>
-
+<class 'openpyxl.cell.cell.Cell'>
 
 type(cellA.value())
-Traceback(most
-recent
-call
-last):
-File
-"<pyshell#120>", line
-1, in < module >
-type(cellA.value())
-TypeError: 'str'
+Traceback(most recent call last): File "<pyshell#120>", line 1, in < module >  type(cellA.value()) TypeError: 'str'
 object is not callable
 
 cellA
-< Cell
-'Sheet1'.A1 >
-cellA.value()
-Traceback(most
-recent
-call
-last):
-File
-"<pyshell#123>", line
-1, in < module >
-cellA.value()
-TypeError: 'str'
+< Cell 'Sheet1'.A1 >
+
+cellA.value() 
+Traceback(most recent  call last): File "<pyshell#123>", line 1, in < module > cellA.value() TypeError: 'str'
 object is not callable
 
 cellA.value()
-Traceback(most
-recent
-call
-last):
-File
-"<pyshell#125>", line
-1, in < module >
-cellA.value()
-TypeError: 'str'
+Traceback(most recent call last): File "<pyshell#125>", line 1, in < module > cellA.value() TypeError: 'str'
 object is not callable
 
 cellA.value
@@ -187,8 +102,7 @@ str(sheet['D5'].value)
 
 # with numbers
 sheet.cell(row=1, column=1)
-< Cell
-'Sheet1'.A1 >
+< Cell 'Sheet1'.A1 >
 
 # printing lot more cells
 
@@ -376,13 +290,12 @@ None
 
 ```
 
-
-You can view and modify a sheet's name with its "title" member variable.
+You can view and modify a sheet's name with its "**_title_**" member variable.
 Changing a cell's value is done using the square brackets, just like changing a value in a list or dictionary.
-Changes you make to the workbook object can be saved with the save() method.
+Changes you make to the workbook object can be saved with the `save()` method.
 
 ```python
-# modify the excel workbook
+# modify the Excel workbook
 
 wb = openpyxl.Workbook()
 
@@ -412,7 +325,7 @@ sheet['A1'].value
 42
 
 os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-Working-with-Excel-Pdf'
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-Working-with-Excel-PDF-Word'
 
 sheet['A2'].value = 'hello'
 
@@ -486,29 +399,21 @@ wb.create_sheet(index=0, title='My Other Sheet')
 wb.save('Example3.xlsx')
 ```
 
-The **PyPDF2** module can read and write PDFs.
-Opening a PDF is done by calling open() and passing the file object to PPdfFileReader().
-A Page object can be obtained from the PDF object with the getPage() method.
-The text from a Page object is obtained with the extractText() method, which can be imperfect.
-New PDFs can be made from PdfFileWriter().
-New pages can be appended to a writer object with the addPage() method.
-Call the write() method to save its changes.
+The `PyPDF2` module can read and write PDFs.
+Opening a PDF is done by calling `open()` and passing the file object to `PPdfFileReader()`.
+A Page object can be obtained from the PDF object with the `getPage()` method.
+The text from a Page object is obtained with the `extractText()` method, which can be imperfect.
+New PDFs can be made from `PdfFileWriter()`.
+New pages can be appended to a writer object with the `addPage()` method.
+Call the `write()` method to save its changes.
 
 ```python
 import PyPDF2
-
-
-os.getswd()
-Traceback (most recent call last):
-  File "<pyshell#237>", line 1, in <module>
-    os.getswd()
-AttributeError: module 'os' has no attribute 'getswd'. Did you mean: 'getcwd'?
 import os
 
 os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-Working-with-Excel-Pdf'
-
-
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course
+\\14-Working-with-Excel-PDF-Word'
 
 pdfFile = open('meetingminutes1.pdf')
 
@@ -542,16 +447,6 @@ page.extractText()
 'OOFFFFIICCIIAALL  BBOOAARRDD  MMIINNUUTTEESS   Meeting of \nMarch 7\n, 2014\n        \n     The Board of Elementary and Secondary Education shall provide leadership and \ncreate policies for education that expand opportunities for children, empower \nfamilies and communities, and advance Louisiana in an increasingly \ncompetitive glob\nal market.\n BOARD \n of ELEMENTARY\n and \n SECONDARY\n EDUCATION\n  '
 
 # for all the pages to read
-
-
-for pagenum in range(reader.numPages):
-    print(reader.getPage(pegenum).extractText())
-
-    
-Traceback (most recent call last):
-  File "<pyshell#271>", line 2, in <module>
-    print(reader.getPage(pegenum).extractText())
-NameError: name 'pegenum' is not defined. Did you mean: 'pagenum'?
 for pagenum in range(reader.numPages):
     print(reader.getPage(pagenum).extractText())
 
@@ -589,51 +484,7 @@ Building in Baton Rouge, Louisiana.  The meeting was called to order at
 9:17 a.m.
  by 
 Board President 
-Chas Roemer
- and opened with a prayer by
- Ms. Terry Johnson, Bossier 
-Parish School System
-.  
-Board members present were 
-Dr. Lottie Beebe, Ms. Holly Boffy, Mr. Jim Garvey, Mr.
- Jay 
-Guillot, Ms.
- Carolyn Hill, Mr. Walter Lee, 
-Dr. Judith Miranti, 
-Mr. Chas Roemer
-, and 
-Ms. Jane Smith
-.  Ms. Connie Bradford
- and Ms. Kira Orange Jones were
- absent.
-  
-Dr. Charlie Michel, Lafourche Parish Sch
-ool System,
- led the Pledge of Allegiance.
-  Agenda
- Item 2.
- On motion of Mr. Garvey, seconded by Ms. Boffy, the Board approved the 
-agenda, as printed and disseminated.
- (Schedule 1)
-  Agenda
- Item 3.
- On motion of Ms. Smith, seconded by Ms. Boffy, the Board app
-roved the 
-minutes of January 15, 2014.
-  Agenda
- Item 4.
- Report by the State Superintendent of Education
-  State Superintendent of Education John White provided an update on the 
-intense and increased support that the LDE is providing to teachers to 
-assist wi
-th 
-new academic expectations.  The LDE has established the 
-following support structures:  
-(1) 
-network teams are working directly with 
-superintendents; 
-(2) 
-district planning teams and district planning guides 
+.....
 have been established in every district; and 
 (3) teacher leader team
 s are
@@ -652,9 +503,7 @@ pdf2 = open('meetingminutes2.pdf', 'rb')
 reader1 = PyPDF2.PdfFileReader(pdf1)
 reader2 = PyPDF2.PdfFileReader(pdf2)
 
-
-
-#loop both and add in a new docuement
+#loop both and add in a new document
 
 writer = PyPDF2.PdfFileWriter()
 
@@ -678,24 +527,19 @@ pdf1.close()
 pdf2.close()
 ```
 
-The Python-Docx third-party module can read and write .docx Word files.
-Open a Word file with docx.Document()
+The **_Python-Docx_** third-party module can read and write .docx Word files.
+Open a Word file with `docx.Document()`
 Access one of the Paragraph objects from the "paragraphs" member variable, which is a list of Paragraph objects.
 Paragraph objects have a "text" member variable containing the text as a string value.
+
 Paragraphs are composed of "runs".  The "runs" member variable of a Paragraph object contains a list of Run objects.
 Run objects also have a "text" member variable.
 Run objects have a "bold", "italic", and "underline" member variables which can be set to True or False.
 Paragraph and run objects have a "style" member variable that can be set to one of Word's built-in styles.
-Word files can be created by calling add_paragraph() and add_run() to append text content.
+Word files can be created by calling `add_paragraph()` and `add_run()` to append text content.
 
 ```python
 import docx
-
-doc.Document('demo.docx')
-Traceback (most recent call last):
-  File "<pyshell#328>", line 1, in <module>
-    doc.Document('demo.docx')
-NameError: name 'doc' is not defined. Did you mean: 'docx'?
 
 docx.Document('demo.docx')
 <docx.document.Document object at 0x0000023F01BB0D40>
@@ -703,7 +547,10 @@ docx.Document('demo.docx')
 d =  docx.Document('demo.docx')
 
 d.paragraphs
-[<docx.text.paragraph.Paragraph object at 0x0000023F01D9ABC0>, <docx.text.paragraph.Paragraph object at 0x0000023F01D9AAD0>, <docx.text.paragraph.Paragraph object at 0x0000023F01D9AC80>, <docx.text.paragraph.Paragraph object at 0x0000023F01D9AB60>, <docx.text.paragraph.Paragraph object at 0x0000023F01D9AE90>, <docx.text.paragraph.Paragraph object at 0x0000023F01D9AD70>, <docx.text.paragraph.Paragraph object at 0x0000023F01D9AE30>]
+[<docx.text.paragraph.Paragraph object at 0x0000023F01D9ABC0>, <docx.text.paragraph.Paragraph object at 0x0000023F01D9AAD0>, 
+<docx.text.paragraph.Paragraph object at 0x0000023F01D9AC80>, <docx.text.paragraph.Paragraph object at 0x0000023F01D9AB60>, 
+<docx.text.paragraph.Paragraph object at 0x0000023F01D9AE90>, <docx.text.paragraph.Paragraph object at 0x0000023F01D9AD70>,
+<docx.text.paragraph.Paragraph object at 0x0000023F01D9AE30>]
 
 d.paragraphs[0].text
 'Document Title'
@@ -713,7 +560,8 @@ d.paragraphs[1].text
 
 p = d.paragraphs[1]
 p.runs
-[<docx.text.run.Run object at 0x0000023F01D9AC50>, <docx.text.run.Run object at 0x0000023F01D9AB90>, <docx.text.run.Run object at 0x0000023F01D9AC20>, <docx.text.run.Run object at 0x0000023F01D9AE30>]
+[<docx.text.run.Run object at 0x0000023F01D9AC50>, <docx.text.run.Run object at 0x0000023F01D9AB90>, 
+<docx.text.run.Run object at 0x0000023F01D9AC20>, <docx.text.run.Run object at 0x0000023F01D9AE30>]
 
 # Check above there are 4 runs because of each changes in the text type.
 
@@ -745,4 +593,130 @@ d.add_paragraph('whats up')
 <docx.text.paragraph.Paragraph object at 0x0000023F01D9B250>
 
 d.save('demo4.docx')
+```
+
+Using the CSV reader
+Reading the CSV and manipulate data. Important methods are `csv.reader(file)`. 
+
+```python
+import csv
+
+data_csv = open('example.csv')
+
+csv_data = csv.reader(data_csv)
+
+type(csv_data)
+<class '_csv.reader'>
+
+# If this error happens it means that the file is not UTF-8 encoded and some unknown character exists
+data_lines = list(csv_data) 
+Traceback (most recent call last):
+  File "<pyshell#14>", line 1, in <module>
+    data_lines = list(csv_data)
+  File "C:\Python\lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x8d in position 1810: character maps to <undefined>
+
+data_csv = open('example.csv', encoding='utf-8')
+
+csv_data = csv.reader(data_csv)
+data_lines = list(csv_data)
+
+type(data_lines)
+<class 'list'>
+
+data_lines[0]
+['id', 'first_name', 'last_name', 'email', 'gender', 'ip_address', 'city']
+
+
+data_lines[10]
+['10', 'Hyatt', 'Gasquoine', 'hgasquoine9@google.ru', 'Male', '221.155.106.39', 'Złoty Stok']
+
+
+data_lines[10][3]
+'hgasquoine9@google.ru'
+
+# all the emails in column
+all_emails = {}
+all_emails = []
+
+for line in data_lines[1:]:
+    all_emails.append(line[3])
+
+OUTPUT    
+all_emails
+['jzaniolini0@simplemachines.org', 'fdrillingcourt1@umich.edu', 'nherity2@statcounter.com', 'ofrayling3@economist.com', 
+ 'jmurrison4@cbslocal.com', 'lgamet5@list-manage.com', 'dhowatt6@amazon.com']
+
+# Similarly, there can be different manipulation done with the data in CSV
+```
+Use of CSV writer 
+Here the important methods are basically `csv.writer(filename, delimiter)` and open the file with specific mode ending 
+with a newline. 
+```python
+file_to_output = open('to_save_file.csv', mode='w', newline='')
+csv_writer = csv.writer(file_to_output, delimiter=',') # Can be '\t' for tab separated file or ';' if semicolon seprated file
+
+csv_writer.writerow(['a','b','c'])
+7 <-- Number of character written
+
+csv_writer.writerows([['1','2','3'],['4','5','6']])
+
+file_to_output.close()
+
+# Append in a existing file
+file = open('to_save_file.csv', mode='a', newline='')
+csv_writer = csv.writer(file, delimiter=',')
+
+csv_writer.writerows([['1','2','3'],['4','5','6']])
+file.close()
+```
+
+PDF write and read with PyPDF2
+```python
+import PyPDF2
+import os
+
+os.chdir('C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-Working-with-Excel-PDF-Word')
+
+f = open('Working_Business_Proposal.pdf', mode='rb')
+
+file_reader = PyPDF2.PdfFileReader(f)
+
+file_reader.numPages
+5
+
+file_reader.getPage(0)
+{'/Type': '/Page', '/Parent': IndirectObject(3, 0), '/Resources': IndirectObject(6, 0), '/Contents': IndirectObject(4, 0), '/MediaBox': [0, 0, 612, 792]}
+
+page_one = file_reader.getPage(0)
+
+page_one_text = page_one.extractText()
+page_one_text
+'Business Proposal\n The Revolution is Coming\n Leverage agile frameworks to provide a robust synopsis for high level \noverviews. Iterative approaches to corporate strategy foster collaborative \nthinking to further the overall value proposition. Organically grow the \nholistic world view of disruptive innovation via workplace diversity and \nempowerment. \nBring to the table win-win survival strategies to ensure proactive \ndomination. At the end of the day, going forward, a new normal that has \nevolved from generation X is on the runway heading towards a streamlined \ncloud solution. User generated content in real-time will have multiple \ntouchpoints for offshoring. \nCapitalize on low hanging fruit to identify a ballpark value added activity to \nbeta test. Override the digital divide with additional clickthroughs from \nDevOps. Nanotechnology immersion along the information highway will \nclose the loop on focusing solely on the bottom line. Podcasting operational change management inside of workßows to \nestablish a framework. Taking seamless key performance indicators ofßine \nto maximise the long tail. Keeping your eye on the ball while performing a \ndeep dive on the start-up mentality to derive convergence on cross-\nplatform integration. \nCollaboratively administrate empowered markets via plug-and-play \nnetworks. Dynamically procrastinate B2C users after installed base \nbeneÞts. Dramatically visualize customer directed convergence without \nrevolutionary ROI. \nEfÞciently unleash cross-media information without cross-media value. \nQuickly maximize timely deliverables for real-time schemas. Dramatically \nmaintain clicks-and-mortar solutions without functional solutions. \nBUSINESS PROPOSAL\n!1'
+
+f.close()
+
+
+# Writing a new PDF with the data of old PDF
+f = open('Working_Business_Proposal.pdf', mode='rb')
+file_reader = PyPDF2.PdfFileReader(f)
+
+pdf_writer = PyPDF2.PdfFileWriter()
+type(file_reader)
+<class 'PyPDF2.pdf.PdfFileReader'>
+
+first_page = file_reader.getPage(0)
+
+type(first_page)
+<class 'PyPDF2.pdf.PageObject'>
+
+pdf_writer.addPage(first_page)
+
+pdf_output = open('some_brand_new_pdf', mode='wb')
+
+pdf_writer.write(pdf_output) # PDFwiter is writing to the file
+
+pdf_output.close()
+
 ```

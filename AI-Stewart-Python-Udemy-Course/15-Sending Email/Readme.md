@@ -1,4 +1,6 @@
-``````
+Sending email 
+
+```python
 import smtplib, ssl
 
 conn = smtplib.SMTP('smtp.gmail.com', 587)
@@ -40,3 +42,30 @@ Traceback (most recent call last):
   File "C:\Python\lib\smtplib.py", line 662, in auth
     raise SMTPAuthenticationError(code, resp)
 smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. Learn more at\n5.7.8  https://support.google.com/mail/?p=BadCredentials 7-20020a05600c228700b00389865c646dsm11799804wmf.14 - gsmtp')
+```
+Full Program 
+
+```python
+import smtplib
+import getpass
+
+smtp_object = smtplib.SMTP('smtp.gmail.com',587)
+smtp_object.ehlo()
+(250, b'smtp.gmail.com at your service, [31.182.206.207]\nSIZE 35882577\n8BITMIME\nSTARTTLS\nENHANCEDSTATUSCODES\nPIPELINING\nCHUNKING\nSMTPUTF8')
+
+smtp_object.starttls()
+(220, b'2.0.0 Ready to start TLS')
+
+email = getpass.getpass("Email: ")
+password = getpass.getpass("Please password")
+smtp_object.login(email,password)
+
+from_address = getpass.getpass("Enter your email: ")
+to_address = getpass.getpass("Enter the email of the recipient: ")
+subject = input("Enter the subject line: ")
+message = input("Type out the message you want to send: ")
+msg = "Subject: " + subject + '\n' + message
+smtp_object.sendmail(from_address,to_address,msg)
+
+smtp_object.quit()
+```

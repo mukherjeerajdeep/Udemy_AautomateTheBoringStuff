@@ -31,7 +31,7 @@ Call `close()` when you are done with the file.
 import os
 
 os.getcwd()
-'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-Working-with-Excel-Pdf'
+'C:\\Rajdeep_Mukherjee\\Udemy_AautomateTheBoringStuff\\AI-Stewart-Python-Udemy-Course\\14-Working-with-Excel-PDF-Word'
 
 os.chdir('/AI-Stewart-Python-Udemy-Course/lesson_11_file_dirs')
 

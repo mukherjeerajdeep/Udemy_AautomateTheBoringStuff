@@ -10,4 +10,4 @@ def getText(fileName):
         fullText.append(para.text)
     return '\n'.join(fullText)
 
-print(getText('/AI-Stewart-Python-Udemy-Course/14-Working-with-Excel-Pdf\\demo.docx'))
+print(getText('/AI-Stewart-Python-Udemy-Course/14-Working-with-Excel-PDF-Word\\demo.docx'))
